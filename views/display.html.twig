@@ -3,4 +3,9 @@
 {% block display %}
     <h2>{{ replacement.getResultPhraseWhole }}</h2>
     <h2>{{ replacement.getResultPhrasePartial }}</h2>
+    {% if replacement.isPalindrome %}
+        <h2>{{replacement.getInitialPhrase}} is a palindrome</h2>
+    {% else %}
+        <h2>{{replacement.getInitialPhrase}} is NOT a palindrome</h2>
+    {% endif %}
 {% endblock %}

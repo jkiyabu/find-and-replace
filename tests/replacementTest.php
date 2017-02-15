@@ -31,6 +31,29 @@
             $this->assertEquals("I am walking my dog to the doghedral", $result);
         }
 
+        function test_Palindrome()
+            {
+            // Arrange
+            $initialPhrase = "Euston saw I was not Sue";
+            $test_case = new Replacer($initialPhrase,"","");
+            // Act
+            $result = $test_case->isPalindrome();
+            // Assert
+            $this->assertEquals(true, $result);
+        }
+
+        function test_PalindromeRegex()
+            {
+            // Arrange
+            $initialPhrase = "Euston saw I was not Sue";
+            $test_case = new Replacer($initialPhrase,"","");
+            // Act
+            $result = $test_case->isPalindromeRegex();
+            // Assert
+            $this->assertEquals(true, $result);
+        }
+
+
 
     }
 

@@ -70,6 +70,15 @@
 
         }
 
+        function isPalindrome()
+        {
+            if (str_replace(" ","",strtolower(strrev($this->initialPhrase))) == str_replace(" ","",strtolower($this->initialPhrase))) {
+                return true;
+            }
+        }
+
+        
+
     }
 
 

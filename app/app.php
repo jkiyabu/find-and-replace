@@ -20,6 +20,7 @@
         $replacement = new Replacer($_POST['phrase'],$_POST['search'],$_POST['replacement']);
         $replacement->findAndReplaceWhole();
         $replacement->findAndReplacePartial();
+        $replacement->isPalindrome();
         return $app['twig']->render('display.html.twig', array('replacement' => $replacement));
     });
 
