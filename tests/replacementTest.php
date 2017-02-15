@@ -11,7 +11,8 @@
             $replacementString = "dog";
             $test_case = new Replacer($initialPhrase,$searchString,$replacementString);
             // Act
-            $result = $test_case->findAndReplaceWhole();
+            $test_case->findAndReplaceWhole();
+            $result = $test_case->getResultPhraseWhole();
             // Assert
             $this->assertEquals("I am walking my dog to the cathedral", $result);
         }
@@ -24,7 +25,8 @@
             $replacementString = "dog";
             $test_case = new Replacer($initialPhrase,$searchString,$replacementString);
             // Act
-            $result = $test_case->findAndReplacePartial();
+            $test_case->findAndReplacePartial();
+            $result = $test_case->getResultPhrasePartial();
             // Assert
             $this->assertEquals("I am walking my dog to the doghedral", $result);
         }

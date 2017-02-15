@@ -11,6 +11,18 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    $app->get('/', function() use ($app) {
+        return $app['twig']->render('form.html.twig');
+    });
+
+    $app->post('/display', function() use ($app) {
+
+        $replacement = new Replacer($_POST['phrase'],$_POST['search'],$_POST['replacement']);
+        $replacement->findAndReplaceWhole();
+        $replacement->findAndReplacePartial();
+        return $app['twig']->render('display.html.twig', array('replacement' => $replacement));
+    });
+
 
 
 

@@ -5,7 +5,34 @@
         private $initialPhrase;
         private $searchString;
         private $replacementString;
-        private $resultPhrase;
+        private $resultPhraseWhole;
+        private $resultPhrasePartial;
+
+        function getInitialPhrase()
+        {
+            return $this->initialPhrase;
+        }
+
+        function getSearchString()
+        {
+            return $this->searchString;
+        }
+
+        function getReplacementString()
+        {
+            return $this->replacementString;
+        }
+
+        function getResultPhraseWhole()
+        {
+            return $this->resultPhraseWhole;
+        }
+
+        function getResultPhrasePartial()
+        {
+            return $this->resultPhrasePartial;
+        }
+
 
         function __construct($initialPhrase,$searchString,$replacementString)
         {
@@ -25,7 +52,7 @@
             }
             unset($word);
             $words = implode(" ", $words);
-            return $words;
+            $this->resultPhraseWhole = $words;
         }
 
 
@@ -39,7 +66,8 @@
             }
             unset($word);
             $words = implode(" ", $words);
-            return $words;
+            $this->resultPhrasePartial = $words;
+
         }
 
     }
